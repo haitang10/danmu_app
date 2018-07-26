@@ -1,0 +1,40 @@
+
+.dm {
+  min-width: 400px;
+}
+.dm_screen {
+
+    height:400px;
+    min-width:400px;
+    border:2px solid #90C695;
+    margin:20px ;
+
+    }
+.content {
+  text-align: center;
+}
+
+
+
+    }
+.dm_text {
+    width:300px;
+    height:30px;
+    }
+.button {
+    text-align:center;
+    }
+.bt_sub  {
+    width:100px;
+    height:30px;
+    background:white;
+    border: 2px solid #90C695;
+    border-radius: 6px;
+    }
+.bt_del {
+    width:100px;
+    height:30px;
+    background:white;
+    border: 2px solid #90C695;
+    border-radius: 6px;
+    }
