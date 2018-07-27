@@ -1,10 +1,6 @@
-
-
-
 // acquire the height and wdth of the dm_screen
 var height = w('.dm_screen').offsetHeight
 var width = w('.dm_screen').offsetWidth
-
 var bt_sub = w('.bt_sub')
 var dm_text = w('.dm_text')
 var bt_del = w('.bt_del')
@@ -38,27 +34,19 @@ bindEvent(bt_del, 'click', function(){
 
 var send = function(text) {
 
-  var t = `
-    <div class='dm_screen_content' id='id-${text}'>${text}
-    </div>
-      `
-
+  var t = `<div class='dm_screen_content' id='id-${text}'>${text}</div>`
   appendHtml(dm_screen, t)
   var id = `#id-${text}`
   var content =w(id)
-  var content_height = (height-20)*Math.random()
+  var dm_height = (height-20)*Math.random()
   log('debug 1 contnt',content)
-  log('debug2', typeof(content_height),content_height)
-  // content.css({
-  //   color: getRandomColor(),
-  //   top:content_height
-  // })
+  log('debug2', typeof(dm_height),dm_height)
+
   content.style.color = getRandomColor()
   // content_height 的数据类型是number ，所以要加上 px
-  content.style.top = content_height + 'px'
-
+  content.style.top = dm_height + 'px'
 
   $('.dm_screen_content').animate({left:"10px"},12000,function(){
-    w(this).remove();
+    $(this).remove();
 });
 }

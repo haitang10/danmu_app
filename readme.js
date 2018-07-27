@@ -12,7 +12,7 @@
 具体步骤：1，给发射按钮和清屏按钮绑定事件，调用send函数和empty函数
 
 
-未解决bug: 如果发送内容不变，那么不能有效分辨不同弹幕，解决办法，在send后输入框内容设为空
+//1.0版本为原生js,2.0版本为jQu
 
 
 // 1,onclick and click , onclick is event,while click is a method
