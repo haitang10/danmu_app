@@ -35,6 +35,7 @@ $(document).ready(function() {
     arr = [];
     $('.dm_show').empty();
   });
+
   //按照时间规则显示弹幕内容。
   var topMin = $('.dm_mask').offset().top;
   var topMax = topMin + $('.dm_mask').height();
