@@ -14,24 +14,24 @@ $(document).ready(function() {
 
   //把数据提交到野狗云
   $(".bt_sub").click(function() {
-    var text = $(".dm_text").val();
-    ref.child('message').push(text);
-    $(".dm_text").val('');
+    var text = $(".dm_text").val()
+    ref.child('message').push(text)
+    $(".dm_text").val('')
   });
 
   //响应按键点击事件
   $(".dm_text").keypress(function(event) {
     if (event.keyCode == "13") {
-      $(".bt_sub").trigger('click');
+      $(".bt_sub").trigger('click')
     }
-  });
+  })
 
   //响应按键清除事件
   $(".bt_del").click(function() {
-    ref.remove();
-    arr = [];
-    $('.dm_screen').empty(); //$('.dm_screen').innerHTML = ''
-  });
+    ref.remove()
+    arr = []
+    $('.dm_screen').empty()//$('.dm_screen').innerHTML = ''
+  })
 
   //监听云端数据变更，云端数据变化，弹幕框里数据也跟着变化。
   ref.child('message').on('child_added', function(snapshot) {
@@ -44,7 +44,7 @@ $(document).ready(function() {
     var id = `#id-${text}`
     var dm_content =$(id)
     moveDm(dm_content)
-  });
+  })
 
   // 添加css,并从弹幕墙移除内容
   var moveDm = function(dm) {
@@ -55,15 +55,15 @@ $(document).ready(function() {
       top: dm_height,
       color: getRandomColor()
     })
-    var time = 20000 + 10000 * Math.random();
+    var time = 20000 + 10000 * Math.random()
     dm.animate({ left: "5px"}, time, function() {
-      dm.remove();
-    });
+      dm.remove()
+    })
   }
 
 
   // 随机从云端获取数据添加到弹幕墙,arr 和云端数据保持一致，
-  // 为了不引起冲突，从云端随机添加的dm 取一个新ID
+  // 为了不引起冲突，从云端随机添加的dm 取一个新ID,并设置计数器，每出现一个新的弹幕，id+1
   var i = 0
   var getAndRun = function() {
 
@@ -78,7 +78,6 @@ $(document).ready(function() {
         log('debug id',id)
         var dm_content =$(id)
         moveDm(dm_content)
-
 
     }
 
